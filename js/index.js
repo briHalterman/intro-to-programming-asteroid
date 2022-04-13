@@ -36,6 +36,7 @@ if(messageForm) {
         const messageList = messageSection.querySelector('ul');
         const newMessage = document.createElement('li');    
         newMessage.innerHTML = `<a href=mailto:email.value>${name.value}</a> wrote: <span>${textarea.value}</span>`;
+        
         const removeButton = document.createElement("button");
         removeButton.innerHTML = "remove";
         removeButton.type = "button";
@@ -43,8 +44,10 @@ if(messageForm) {
             const entry = removeButton.parentNode.parentNode();
             entry.remove();
         });
+        
         newMessage.appendChild(removeButton);
         messageList.appendChild(newMessage);
+        
         messageForm.reset();
     });
 };
