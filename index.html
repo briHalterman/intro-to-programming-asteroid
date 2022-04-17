@@ -6,17 +6,14 @@
         <meta name="keywords" content="Halterman, developer, computer programming, programmer, student, profile, portfolio">
         <meta name="description" content="Brittany Halterman's Profile">
         <meta name="author" content="Brittany Halterman">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet"> 
     </head>
 
     <body>   
-        <header>
-            <h1>Brittany Halterman</h1>
-            <div>
-                <img src="img/headshot3.jpg" alt="Brittany Halterman's professional headshot"
-                width="600"
-                height="400" />
-            </div>
-       
+        <header>   
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
@@ -26,6 +23,12 @@
                     <li><a href="#connect">Connect</a></li>
                 </ul>
             </nav>
+
+            <h1>Brittany Halterman</h1>
+
+            <div id="headshot">
+                <img src="img/headshot3.jpg" alt="Brittany Halterman's professional headshot"/>
+            </div>
         </header>
 
         <main>
@@ -71,7 +74,7 @@
      
     <section>
         <h2>Leave a Message</h2>
-        <form name="leave_message">
+        <form name="leave_message" id="leave_message">
             <label>Name</label><br>
             <input type="text" name="name" requied="true"><br>
             
@@ -81,13 +84,13 @@
             <label>Message</label><br>
             <textarea name="message" required="true"></textarea><br>
             
-            <button type="submit">Submit</button>
+            <button type="submit" class="button">Submit</button>
         </form>
     </section>
 
     <section id="messages">
         <h2>Messages</h2>
-        <ul></ul>
+        <ul id="message_item"></ul>
     </section>
 
     <footer></footer>
