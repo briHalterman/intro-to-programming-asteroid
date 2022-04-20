@@ -8,7 +8,7 @@ footer.appendChild(copyRight);
 
 const skillsSection = document.getElementById(`skills`);
 const skillList = skillsSection.querySelector('ul');
-const skills = [`Mental Health First Aid`, `Administration`, `Microsoft Word`, `Microsoft Excel`, 'HTML', 'JS'];
+const skills = [`Mental Health First Aid`, `Administration`, `Microsoft Word`, `Microsoft Excel`, 'CSS', 'HTML', 'JS'];
 
 for ( i = 0; i < skills.length; i ++ ) {
     var item = document.createElement('li');
@@ -35,16 +35,21 @@ if(messageForm) {
         const messageSection = document.getElementById('messages');
         const messageList = messageSection.querySelector('ul');
         const newMessage = document.createElement('li');    
-        newMessage.innerHTML = `<a href=mailto:email.value>${name.value}</a> wrote: <span>${textarea.value}</span>`;
+        newMessage.innerHTML = `<a href=mailto:${email.value}>${name.value}</a> wrote: <span style="margin-right:10px">${textarea.value}</span>`;
+        
         const removeButton = document.createElement("button");
+        removeButton.classList.add("button");
         removeButton.innerHTML = "remove";
         removeButton.type = "button";
         removeButton.addEventListener('click', (event) => {
-            const entry = removeButton.parentNode.parentNode();
+            const entry = event.target.parentNode;
+            console.log(entry);
             entry.remove();
         });
+        
         newMessage.appendChild(removeButton);
         messageList.appendChild(newMessage);
+        
         messageForm.reset();
     });
 };

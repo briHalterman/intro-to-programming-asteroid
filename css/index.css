@@ -1,0 +1,117 @@
+body {
+    background-color: #F9F3F1;
+    color:#200C05;
+    font-family: 'Lora', serif;
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size: 26px;
+}
+ul {
+    padding-left: 0;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}  
+ a:hover {
+    text-decoration: underline;
+}
+nav li {
+    list-style-type: none;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+nav li:hover {
+    padding: 10px;
+}
+h1 {
+    font-size: 100px;
+    font-weight: bold;
+    color: #200C05;
+}
+img {
+    max-width: 50%;
+    border-radius: 15px;
+}
+section {
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #200C05;
+    margin-bottom: 20px;
+}
+#experience li {
+    background-color: #E7E9EF;
+    list-style-type: none;
+    border-radius: 10px;
+    padding: 10px;    
+}
+#education li {
+    list-style-type: none;
+    padding: 10px; 
+}
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+#skills li {
+    background-color: #E7E9EF;
+    list-style-type: none;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #200C05; 
+    border-radius: 10px;
+    font-size: 20px;
+}
+#connect p {
+    margin: 1px;
+    font-size: 20px;
+}
+#leave_message label {
+    font-size: 20px;
+    color: #200C05;
+}
+#leave_message input, textarea {
+    margin-top: 4px;
+    margin-bottom: 15px;
+    border: 2px solid #200C05;
+    padding: 10px;
+}
+#leave_message input:focus, textarea:focus {
+    outline: 1.5px solid #200C05;
+    border-radius: 1.5px;
+}
+.button {
+    padding: 8px;
+    background-color: #BFC969;
+    color: #200C05;
+    border: 2px solid #200C05;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.button:hover {
+    text-decoration: underline;
+    padding: 10px;
+    outline: 1.5px solid #200C05;
+}
+#message_item li {
+    border: 1px solid #200C05;
+    padding: 3px;
+}
+footer {
+    letter-spacing: 2px;
+    background-color: #F3E7E2;
+    border-radius: 5px;
+    font-size: 15px;
+}
+@media only screen and (min-width: 1000px) {
+    nav li {
+        display: inline;
+    }
+}
