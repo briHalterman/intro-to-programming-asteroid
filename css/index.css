@@ -44,22 +44,24 @@ h2 {
     color: #200C05;
     margin-bottom: 20px;
 }
-#experience li {
-    background-color: #E7E9EF;
-    list-style-type: none;
-    border-radius: 10px;
-    padding: 10px;    
-}
+/* #experience li {
+    background-color: #BFC969;
+} */
 #education li {
     list-style-type: none;
     padding: 10px; 
 }
-#skills ul {
+.flex-list {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
 }
-#skills li {
+
+/* li {
+    background-color: limegreen;
+} */
+
+.flex-list li {
     background-color: #E7E9EF;
     list-style-type: none;
     margin-left: 15px;
@@ -102,7 +104,12 @@ h2 {
 }
 #message_item li {
     border: 1px solid #200C05;
-    padding: 3px;
+    padding: 2px;
+}
+#leave_message {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
 footer {
     letter-spacing: 2px;
@@ -115,3 +122,5 @@ footer {
         display: inline;
     }
 }
+
+/*hello, this is my comment*/
