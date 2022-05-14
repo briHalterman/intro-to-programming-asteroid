@@ -10,7 +10,7 @@ const skillsSection = document.getElementById(`skills`);
 const skillList = skillsSection.querySelector('ul');
 const skills = [`Mental Health First Aid`, `Administration`, `Microsoft Word`, `Microsoft Excel`, 'CSS', 'HTML', 'JS'];
 
-for ( i = 0; i < skills.length; i ++ ) {
+for ( let i = 0; i < skills.length; i ++ ) {
     var item = document.createElement('li');
     item.textContent = skills[i];
     skillList.prepend(item);
@@ -34,12 +34,19 @@ if(messageForm) {
 
         const messageSection = document.getElementById('messages');
         const messageList = messageSection.querySelector('ul');
-        const newMessage = document.createElement('li');    
-        newMessage.innerHTML = `<a href=mailto:${email.value}>${name.value}</a> wrote: <span style="margin-right:10px">${textarea.value}</span>`;
+        const newMessage = document.createElement('li');
+        const messageEmail = document.createElement('a');
+        const messageParagraph = document.createElement('p');
+        messageEmail.textContent = name.value;
+        messageEmail.href = `mailto:${email.value}`;
+        messageParagraph.textContent = ` wrote: ${textarea.value}`;
+        newMessage.appendChild(messageParagraph);  
+        messageParagraph.prepend(messageEmail); 
+        //newMessage.innerHTML = `<a href=mailto:${email.value}>${name.value}</a> wrote: <span style="margin-right:10px">${textarea.value}</span>`;
         
         const removeButton = document.createElement("button");
         removeButton.classList.add("button");
-        removeButton.innerHTML = "remove";
+        removeButton.textContent = "remove";
         removeButton.type = "button";
         removeButton.addEventListener('click', (event) => {
             const entry = event.target.parentNode;
@@ -53,6 +60,24 @@ if(messageForm) {
         messageForm.reset();
     });
 };
+
+var githubRequest = new XMLHttpRequest();
+
+githubRequest.open('GET', 'https://api.github.com/users/brihalterman/repos');
+githubRequest.send();
+
+
+githubRequest.addEventListener('load', function() {
+    const repositories = (JSON.parse(this.response));
+    const projectSection = document.getElementById('projects');
+    const projectList = projectSection.querySelector('ul');
+    for (let i = 0; i < repositories.length; i++) {
+        const project = document.createElement('li');
+        project.textContent = repositories[i].name;
+        console.log(project);
+        projectList.appendChild(project);
+    }
+});
 
 
 
