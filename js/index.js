@@ -61,25 +61,35 @@ if(messageForm) {
     });
 };
 
-var githubRequest = new XMLHttpRequest();
+// var githubRequest = new XMLHttpRequest();
 
-githubRequest.open('GET', 'https://api.github.com/users/brihalterman/repos');
-githubRequest.send();
-
-
-githubRequest.addEventListener('load', function() {
-    const repositories = (JSON.parse(this.response));
-    const projectSection = document.getElementById('projects');
-    const projectList = projectSection.querySelector('ul');
-    for (let i = 0; i < repositories.length; i++) {
-        const project = document.createElement('li');
-        project.textContent = repositories[i].name;
-        console.log(project);
-        projectList.appendChild(project);
-    }
-});
+// githubRequest.open('GET', 'https://api.github.com/users/brihalterman/repos');
+// githubRequest.send();
 
 
+// githubRequest.addEventListener('load', function() {
+//     const repositories = (JSON.parse(this.response));
+//     const projectSection = document.getElementById('projects');
+//     const projectList = projectSection.querySelector('ul');
+//     for (let i = 0; i < repositories.length; i++) {
+//         const project = document.createElement('li');
+//         project.textContent = repositories[i].name;
+//         console.log(project);
+//         projectList.appendChild(project);
+//     }
+// });
+
+fetch('https://api.github.com/users/brihalterman/repos')
+    .then((res) => res.json())
+    .then((repositories) => {
+        const projectSection = document.getElementById('projects');
+        const projectList = projectSection.querySelector('ul');
+        for ( let i = 0; i < repositories.length; i++ ) {
+            const project = document.createElement('li');
+            project.textContent = repositories[i].name;
+            projectList.appendChild(project);
+        }
+    });
 
 
 
