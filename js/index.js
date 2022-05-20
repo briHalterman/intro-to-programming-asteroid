@@ -4,6 +4,7 @@ const footer = document.querySelector("footer");
 const copyRight = document.createElement("p");
 
 copyRight.innerHTML = (`&copy; Halterman ${thisYear}`);
+copyRight.style.margin = 0;
 footer.appendChild(copyRight);
 
 const skillsSection = document.getElementById(`skills`);
@@ -32,7 +33,20 @@ if(messageForm) {
         const textarea = event.target.message;
         console.log(name.value,email.value,textarea.value);
 
-        const messageSection = document.getElementById('messages');
+        let messageSection = document.getElementById('messages');
+        if (!messageSection) {
+            const main = document.getElementById('main');
+            const section = document.createElement('section');
+            section.setAttribute('id', 'messages');
+            main.appendChild(section);
+            const header = document.createElement('h2');
+            header.innerText = 'Messages';
+            section.appendChild(header);
+            const list = document.createElement('ul');
+            list.setAttribute('id', 'message_item');
+            section.appendChild(list);
+            messageSection = section;
+        }
         const messageList = messageSection.querySelector('ul');
         const newMessage = document.createElement('li');
         const messageEmail = document.createElement('a');
@@ -52,6 +66,9 @@ if(messageForm) {
             const entry = event.target.parentNode;
             console.log(entry);
             entry.remove();
+            if (messageList.children.length === 0) {
+                messageSection.remove();
+            }
         });
         
         newMessage.appendChild(removeButton);
@@ -85,8 +102,13 @@ fetch('https://api.github.com/users/brihalterman/repos')
         const projectSection = document.getElementById('projects');
         const projectList = projectSection.querySelector('ul');
         for ( let i = 0; i < repositories.length; i++ ) {
+            const repository = repositories[i];
+            const link = document.createElement('a');
+            link.setAttribute('href', repository.html_url);
+            link.innerText = repository.name;
+
             const project = document.createElement('li');
-            project.textContent = repositories[i].name;
+            project.appendChild(link);
             projectList.appendChild(project);
         }
     });

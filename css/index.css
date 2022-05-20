@@ -1,13 +1,22 @@
 body {
     background-color: #F9F3F1;
     color:#200C05;
-    font-family: 'Lora', serif;
+    font-family: 'Lato', sans-serif;
     margin-left: 15%;
     margin-right: 15%;
     font-size: 26px;
 }
 ul {
     padding-left: 0;
+}
+#projectList {
+    padding-left: 40px;
+}
+#social_media {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
 }
 a:link {
     text-decoration: none;
@@ -18,10 +27,14 @@ a:visited {
  a:hover {
     text-decoration: underline;
 }
+.colorless {
+    color: inherit;
+}
 nav li {
     list-style-type: none;
     padding-left: 8px;
     padding-right: 8px;
+    font-size: 25px;
 }
 nav li:hover {
     padding: 10px;
@@ -111,16 +124,21 @@ h2 {
     flex-direction: column;
     width: 50%;
 }
+#messages li {
+    list-style-type: none;
+}
 footer {
     letter-spacing: 2px;
     background-color: #F3E7E2;
     border-radius: 5px;
     font-size: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
 }
 @media only screen and (min-width: 1000px) {
     nav li {
         display: inline;
     }
 }
-
-/*hello, this is my comment*/
