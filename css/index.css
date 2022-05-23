@@ -37,15 +37,14 @@ a:visited {
 }
 nav li {
     list-style-type: none;
-    padding-left: 8px;
     padding-right: 8px;
-    font-size: 22px;
+    font-size: 20px;
 }
 nav li:hover {
     padding: 10px;
 }
 h1 {
-    font-size: 50px;
+    font-size: 45px;
     font-weight: bold;
     color: #200C05;
 }
@@ -128,7 +127,7 @@ footer {
     justify-content: space-between;
 }
 
-@media only screen and (min-width: 1350px) {
+@media only screen and (min-width: 1200px) {
     nav li {
         display: inline;
     }
