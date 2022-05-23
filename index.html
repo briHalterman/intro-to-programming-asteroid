@@ -1,3 +1,5 @@
+<!-- Created by Brittany Halterman, Spring 2022 -->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,29 +11,30 @@
         <link rel="stylesheet" href="css/index.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
-    <body>   
+    <body>  
         <header>   
+            
+            <h1>Brittany Halterman</h1>
+            
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#connect">Connect</a></li>
+                    <li><a href="#leave_message">Leave a Message</a></li>
                 </ul>
             </nav>
-
-            <h1>Brittany Halterman</h1>
-
-            <div id="headshot">
-                <img src="img/headshot3.jpg" alt="Brittany Halterman's professional headshot"/>
-            </div>
+            
         </header>
 
-        <main>
+        <main id="main">
+            
             <section id="about">
                 <h2>About</h2>
                 <p>Brittany Halterman is a promising student of computer 
@@ -42,11 +45,15 @@
                 to a future career as a full-stack web developer.</p>
             </section>
 
+            <div id="headshot">
+                <img src="img/headshot3.jpg" alt="Brittany Halterman's professional headshot"/>
+            </div>
+
             <section id="experience">
                 <h2>Experience</h2>
                 <ul class="flex-list">
                     <li>Student, Code the Dream</li>
-                    <li>Adminitrative Assistant, MOVE LLC.</li>
+                    <li>Administrative Assistant, MOVE LLC.</li>
                 </ul>
             </section>
 
@@ -67,40 +74,59 @@
 
             <section id="projects">
                 <h2>Projects</h2>
-                <ul></ul>
+                <ul id="projectList"></ul>
             </section>
 
             <section id="connect">
                 <h2>Connect</h2>
                 <p><strong>Email:</strong> <a href="mailto:halterma@gmail.com">halterma@gmail.com</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/brittany-halterman-4087611aa">Brittany Halterman</a></p>
                 <p><strong>GitHub:</strong> <a href="https://github.com/brihalterman">BriHalterman</a></p>
-                <p><strong>LinkdIn:</strong> <a href="https://www.linkedin.com/in/brittany-halterman-4087611aa">Brittany Halterman</a></p>
+            </section>
+
+            <section id="contact">
+                <h2>Leave a Message</h2>
+                <form name="leave_message" id="leave_message">
+                    <div id="form_name">
+                        <label>Name</label><br>
+                        <input type="text" name="name" requied="true"><br>
+                    </div>
+                    
+                    <div id="form_email">
+                        <label>Email</label><br>
+                        <input type="email" name="email" required="true"><br>
+                    </div>
+                    
+                    <div id="form_message">
+                        <label>Message</label><br>
+                        <input type="textarea" name="message" required="true"></textarea><br>
+                    </div>
+                    
+                    <button type="submit" class="button">Submit</button>
+                </form>
             </section>
         </main>
-     
-    <section>
-        <h2>Leave a Message</h2>
-        <form name="leave_message" id="leave_message">
-            <label>Name</label><br>
-            <input type="text" name="name" requied="true"><br>
-            
-            <label>Email</label><br>
-            <input type="email" name="email" required="true"><br>
-            
-            <label>Message</label><br>
-            <textarea name="message" required="true"></textarea><br>
-            
-            <button type="submit" class="button">Submit</button>
-        </form>
-    </section>
 
-    <section id="messages">
-        <h2>Messages</h2>
-        <ul id="message_item"></ul>
-    </section>
+        <footer>
 
-    <footer></footer>
-    <script src="js/index.js"></script>
+            <script src="js/index.js"></script>
+
+            <ul id="social_media">
+
+                <li class="social_media__item">
+                    <a class="colorless" href="https://www.linkedin.com/in/brittany-halterman-4087611aa" target="_blank" title="LinkedIn">
+                        <i class="fa fa-linkedin-square" style="font-size:24px"></i>
+                    </a>
+                </li>
+
+                <li class="social_media__item">
+                    <a class="colorless" href="https://github.com/brihalterman" target="_blank" title="GitHub">
+                        <i class="fa fa-github-square" style="font-size:24px"></i>
+                    </a>
+                </li>
+
+            </ul>
+        </footer>
     </body>
 
 </html>
