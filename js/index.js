@@ -1,3 +1,5 @@
+// Create copyright
+
 const today = new Date();
 const thisYear = today.getFullYear();
 const footer = document.querySelector("footer");
@@ -6,6 +8,8 @@ const copyRight = document.createElement("p");
 copyRight.innerHTML = (`&copy; Halterman ${thisYear}`);
 copyRight.style.margin = 0;
 footer.appendChild(copyRight);
+
+// Add skills to Skills Section
 
 const skillsSection = document.getElementById(`skills`);
 const skillList = skillsSection.querySelector('ul');
@@ -17,11 +21,7 @@ for ( let i = 0; i < skills.length; i ++ ) {
     skillList.prepend(item);
 };
 
-// const hiBrittany = (event) => {
-//     console.log(event.target)
-// }
-
-// document.addEventListener('click', hiBrittany);
+//Create and implement Message Section with form
 
 const submit = document.getElementById('submit');
 const messageForm = document.getElementsByName('leave_message')[0];
@@ -78,6 +78,10 @@ if(messageForm) {
     });
 };
 
+// Fetch and append projects from GitHub through two different approaches
+
+
+
 // var githubRequest = new XMLHttpRequest();
 
 // githubRequest.open('GET', 'https://api.github.com/users/brihalterman/repos');
@@ -95,6 +99,8 @@ if(messageForm) {
 //         projectList.appendChild(project);
 //     }
 // });
+
+
 
 fetch('https://api.github.com/users/brihalterman/repos')
     .then((res) => res.json())
